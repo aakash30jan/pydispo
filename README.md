@@ -5,8 +5,9 @@
 <p> A Disposable Mailbox Powered by Pure-Python</p><br>
 
 ![language](https://img.shields.io/github/languages/top/aakash30jan/pydispo)
-![release](https://img.shields.io/github/v/release/aakash30jan/pydispo)
+![Release](https://img.shields.io/github/v/release/aakash30jan/pydispo)
 ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
+[![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)](https://twitter.com/intent/tweet?text=Wow%2C+check+this+out%21+%23pydispo+is+a+disposable+mailbox+powered+by+pure-%23python.+Avoid+%23spam+and+protect+your+%23privacy+with+pydispo.&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)
 
 `pydispo` is a pure-pythonic way of managing disposable mailbox that allows users to create several disposable email addresses and receive emails on those. It can be directly used from the command line or imported as a python module for advanced usage. `pydispo` is platform-independent and uses python standard libraries, so if you have python installed you don't need to satisfy any additional dependencies. 
 
@@ -99,6 +100,7 @@ $ pydispo -e g6cqog5utd@1secmail.net
 
 ## Issues:
 Problems? Please raise an issue at "https://github.com/aakash30jan/pydispo/issues" and I will get back to you soon.
+![Issues](https://img.shields.io/github/issues/aakash30jan/pydispo)  ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
 ## Why disposable emails?
 To avoid SPAM. To protect your PRIVACY.  Lots of web pages, blogs, forums and services would ask you to register or provide email addresses to read comments, download content, or register account or profile. And a lot of them will use your private email address to send you spam. Disposable emails are perfect for any transaction where you want to improve your online privacy, like when you trade cryptocurrencies. These are also used by developers and testers for several time-saving reasons.
