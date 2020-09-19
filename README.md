@@ -1,12 +1,10 @@
 
-<h1>
-<b>pydispo</b>
-</h1>
-<p> A Disposable Mailbox Powered by Pure-Python</p><br>
+# pydispo
+#### A Disposable Mailbox Powered by Pure-Python
 
-![language](https://img.shields.io/github/languages/top/aakash30jan/pydispo)
-![Release](https://img.shields.io/github/v/release/aakash30jan/pydispo)
-![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
+[![language](https://img.shields.io/github/languages/top/aakash30jan/pydispo)](#pydispo)
+[![Release](https://img.shields.io/github/v/release/aakash30jan/pydispo)](#pydispo)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](#pydispo)
 [![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)](https://twitter.com/intent/tweet?text=Wow%2C+check+this+out%21+%23pydispo+is+a+disposable+mailbox+powered+by+pure-%23python.+Avoid+%23spam+and+protect+your+%23privacy+with+pydispo.&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)
 
 `pydispo` is a pure-pythonic way of managing disposable mailbox that allows users to create several disposable email addresses and receive emails on those. It can be directly used from the command line or imported as a python module for advanced usage. `pydispo` is platform-independent and uses python standard libraries, so if you have python installed you don't need to satisfy any additional dependencies. 
@@ -23,21 +21,22 @@ $ curl -L "https://git.io/pydispo" > pydispo && chmod +x pydispo
 
 ### PyPI
 `pydispo` is also available as a python package from [https://pypi.org/project/pydispo/](https://pypi.org/project/pydispo/).
-Download and install it as a system or environment package with pip
+Download and install it as a system or environment package with pip. It can be then used in a CLI mode or as a python module 
 ```bash
 $ pip install pydispo
 ```
 
 ### Source
-Alternatively, the `pydispo` package source tarball can be downloaded from [here](https://github.com/aakash30jan/pydispo/blob/master/pydispo-20.9a1.tar.gz?raw=true)
+Alternatively, the latest `pydispo` package source tarball can be downloaded from [here](https://github.com/aakash30jan/pydispo/archive/v20.9a2.tar.gz) (18.9 kB). 
 
 ## Usage
+![Usage Demo](https://apatil.me/tools/pydisp_cast.gif)
+
 ```console
 Usage: pydispo [-h] [-a] [-r] [-g] [-s] [-b BROWSER] [-e EMAIL] [id]
 
-Positional arguments:
+Options
   id                    Check email with message ID (default shows mailbox)
-Optional arguments:
   -h, --help            show this help message and exit
   -a, --attached        Download all attached files in the email
   -r, --recent          Check the recent email
@@ -98,9 +97,23 @@ Check mailbox of another disposable email
 $ pydispo -e g6cqog5utd@1secmail.net
 ```
 
+Using as a python module
+```shell
+$ python
+```
+```python
+>>> from pydispo import *
+>>> email_addr = generate_email_address(size=10,storeInFile='email_address',mode='w') 
+Generated: ma4x8pgolq@1secmail.org
+>>> check_mailbox(email_addr,showInbox=True,showRecent=False)
+Mailbox:  ma4x8pgolq@1secmail.org  Mails in Inbox: 1
+Message ID       Sender                  Subject         Date
+84784986         yourfriend@mail.com     About pydispo   2020-09-16 17:34:13
+```
 ## Issues:
-Problems? Please raise an issue at "https://github.com/aakash30jan/pydispo/issues" and I will get back to you soon.
-![Issues](https://img.shields.io/github/issues/aakash30jan/pydispo)  ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
+Problems? Please raise an issue at "https://github.com/aakash30jan/pydispo/issues".
+
+[![Issues](https://img.shields.io/github/issues/aakash30jan/pydispo)](#pydispo)  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](#pydispo)
 
 ## Why disposable emails?
 To avoid SPAM. To protect your PRIVACY.  Lots of web pages, blogs, forums and services would ask you to register or provide email addresses to read comments, download content, or register account or profile. And a lot of them will use your private email address to send you spam. Disposable emails are perfect for any transaction where you want to improve your online privacy, like when you trade cryptocurrencies. These are also used by developers and testers for several time-saving reasons.
@@ -111,7 +124,7 @@ Read More : [How-To Geek](https://www.howtogeek.com/tips/protect-yourself-from-s
 
 
 ## License
-This work is licensed under a GNU General Public License Version 3 . [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+This work is licensed under a GNU General Public License Version 3 . [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](#pydispo)
 
 
 
