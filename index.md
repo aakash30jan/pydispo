@@ -1,37 +1,129 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/aakash30jan/pydispo/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# pydispo
+#### A Disposable Mailbox Powered by Pure-Python
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[![language](https://img.shields.io/github/languages/top/aakash30jan/pydispo)](#pydispo)
+[![Release](https://img.shields.io/github/v/release/aakash30jan/pydispo)](#pydispo)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](#pydispo)
+[![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)](https://twitter.com/intent/tweet?text=Wow%2C+check+this+out%21+%23pydispo+is+a+disposable+mailbox+powered+by+pure-%23python.+Avoid+%23spam+and+protect+your+%23privacy+with+pydispo.&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)
 
-### Markdown
+`pydispo` is a pure-pythonic way of managing disposable mailbox that allows users to create several disposable email addresses and receive emails on those. It can be directly used from the command line or imported as a python module for advanced usage. `pydispo` is platform-independent and uses python standard libraries, so if you have python installed you don't need to satisfy any additional dependencies. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Optionally, `pydispo` can fetch attached files and there's also a provision to save emails as HTML.  By default, the emails are shown as text, optionally any standard web browser can be used to view the emails. Currently, it uses 1secmail API to receive emails, and soon it would support some other APIs.  If you want a bash-like implementation with some dependencies, please check the [tmpmail](https://github.com/sdushantha/tmpmail) script. 
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Installation
+### Standalone 
+Download the `pydispo` standalone script and make it executable
+```bash
+$ curl -L "https://git.io/pydispo" > pydispo && chmod +x pydispo
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### PyPI
+`pydispo` is also available as a python package from [https://pypi.org/project/pydispo/](https://pypi.org/project/pydispo/).
+Download and install it as a system or environment package with pip. It can be then used in a CLI mode or as a python module 
+```bash
+$ pip install pydispo
+```
 
-### Jekyll Themes
+### Source
+Alternatively, the latest `pydispo` package source tarball can be downloaded from [here](https://github.com/aakash30jan/pydispo/archive/v20.9a2.tar.gz) (18.9 kB). 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/aakash30jan/pydispo/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Usage
+![Usage Demo](https://apatil.me/tools/pydisp_cast.gif)
 
-### Support or Contact
+```console
+Usage: pydispo [-h] [-a] [-r] [-g] [-s] [-b BROWSER] [-e EMAIL] [id]
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Options
+  id                    Check email with message ID (default shows mailbox)
+  -h, --help            show this help message and exit
+  -a, --attached        Download all attached files in the email
+  -r, --recent          Check the recent email
+  -g, --generate        Generate a new email address
+  -s, --save            Save email in an HTML file
+  -b, --browser         Browser to check the email in HTML
+  -e, --email           Check mailbox of a particular email
+
+```
+
+### Examples
+Generate a disposable email address
+```console
+$ pydispo -g
+Generated: ma4x8pgolq@1secmail.org
+```
+
+Check the mailbox
+```console
+$ pydispo
+Mailbox:  ma4x8pgolq@1secmail.org  Mails in Inbox: 1
+Message ID       Sender                  Subject         Date
+84784986         yourfriend@mail.com     About pydispo   2020-09-16 17:34:13
+```
+
+Check a particular email
+```console
+$ pydispo 84784986
+ID:  84784986
+To:  ma4x8pgolq@1secmail.org
+From:  yourfriend@mail.com
+Date:  2020-09-16 17:34:13
+Subject:  About pydispo
+Attachments:  ['pydispo_leaflet.pdf   (application/pdf)   0.2 MB ']
+--------------------
+Check this out
+Cheers.
+--------------------
+```
+
+Check the recent email
+```console
+$ pydispo -r
+```
+
+Check a particular email, get attached files, and save email as HTML 
+```console
+$ pydispo -a -s 84784986 
+```
+
+Check a particular email in a browser of choice
+```console
+$ pydispo 84784986 -b elinks
+```
+
+Check mailbox of another disposable email 
+```console
+$ pydispo -e g6cqog5utd@1secmail.net
+```
+
+Using as a python module
+```shell
+$ python
+```
+```python
+>>> from pydispo import *
+>>> email_addr = generate_email_address(size=10,storeInFile='email_address',mode='w') 
+Generated: ma4x8pgolq@1secmail.org
+>>> check_mailbox(email_addr,showInbox=True,showRecent=False)
+Mailbox:  ma4x8pgolq@1secmail.org  Mails in Inbox: 1
+Message ID       Sender                  Subject         Date
+84784986         yourfriend@mail.com     About pydispo   2020-09-16 17:34:13
+```
+## Issues:
+Problems? Please raise an issue at "https://github.com/aakash30jan/pydispo/issues".
+
+[![Issues](https://img.shields.io/github/issues/aakash30jan/pydispo)](#pydispo)  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](#pydispo)
+
+## Why disposable emails?
+To avoid SPAM. To protect your PRIVACY.  Lots of web pages, blogs, forums and services would ask you to register or provide email addresses to read comments, download content, or register account or profile. And a lot of them will use your private email address to send you spam. Disposable emails are perfect for any transaction where you want to improve your online privacy, like when you trade cryptocurrencies. These are also used by developers and testers for several time-saving reasons.
+Read More : [How-To Geek](https://www.howtogeek.com/tips/protect-yourself-from-spam-with-free-disposable-email-addresses/) ,  [WIRED](https://www.wired.com/story/avoid-spam-disposable-email-burner-phone-number/) 
+
+## Credits 
+`pydispo` is a dependency-free, platform-independent replication of Siddharth's [tmpmail](https://github.com/sdushantha/tmpmail) bash-script and follows a usage pattern similar to it. 
+
+
+## License
+This work is licensed under a GNU General Public License Version 3 . [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](#pydispo)
+
+
