@@ -1,11 +1,11 @@
 
 # pydispo
-#### A Disposable Mailbox Powered by Pure-Python
+#### A Disposable Mailbox Powered by Pure-Python [![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)](https://twitter.com/intent/tweet?text=Wow%2C+check+this+out%21+%23pydispo+is+a+disposable+mailbox+powered+by+pure-%23python.+Avoid+%23spam+and+protect+your+%23privacy+with+pydispo.&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)
 
 [![language](https://img.shields.io/github/languages/top/aakash30jan/pydispo)](#pydispo)
 [![Release](https://img.shields.io/github/v/release/aakash30jan/pydispo)](#pydispo)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](#pydispo)
-[![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)](https://twitter.com/intent/tweet?text=Wow%2C+check+this+out%21+%23pydispo+is+a+disposable+mailbox+powered+by+pure-%23python.+Avoid+%23spam+and+protect+your+%23privacy+with+pydispo.&url=https%3A%2F%2Fgithub.com%2Faakash30jan%2Fpydispo)
+
 
 `pydispo` is a pure-pythonic way of managing disposable mailbox that allows users to create several disposable email addresses and receive emails on those. It can be directly used from the command line or imported as a python module for advanced usage. `pydispo` is platform-independent and uses python standard libraries, so if you have python installed you don't need to satisfy any additional dependencies. 
 
@@ -27,7 +27,7 @@ $ pip install pydispo
 ```
 
 ### Source
-Alternatively, the latest `pydispo` package source tarball can be downloaded from [here](https://github.com/aakash30jan/pydispo/archive/v20.9a2.tar.gz) (18.9 kB). 
+Alternatively, the latest `pydispo` package source tarball can be downloaded from [here](https://github.com/aakash30jan/pydispo/archive/v20.9b1.tar.gz) (18.9 kB). 
 
 ## Usage
 ![Usage Demo](https://apatil.me/tools/pydisp_cast.gif)
@@ -111,7 +111,7 @@ Message ID       Sender                  Subject         Date
 84784986         yourfriend@mail.com     About pydispo   2020-09-16 17:34:13
 ```
 ## Issues:
-Problems? Please raise an issue at "https://github.com/aakash30jan/pydispo/issues".
+Problems? Please raise an issue at [https://github.com/aakash30jan/pydispo/issues](https://github.com/aakash30jan/pydispo/issues).
 
 [![Issues](https://img.shields.io/github/issues/aakash30jan/pydispo)](#pydispo)  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](#pydispo)
 

@@ -23,7 +23,7 @@ cache_tag = 'TEMP' #Options: CWD, <UD>
 
 #os check
 if os.name == 'nt':
-    temp_dir = r'C:\\Users\\aakash.patil\\AppData\\Local\\Temp\\'
+    temp_dir = os.path.expanduser('~')+r'\\AppData\\Local\\Temp\\'
 else:
     temp_dir = "/tmp/" 
 
@@ -96,7 +96,7 @@ def check_mailbox(email_addr,showInbox=True,showRecent=True):
         if showInbox:
             if nm == 0:
                 print('Message ID' ,'\t', 'Sender' ,'\t \t', 'Subject', '\t' , 'Date')
-            print(response[nm]['id'] ,'\t', response[nm]['from'] ,'\t', response[nm]['subject'], '\t' , response[nm]['date'] )
+            print(response[nm]['id'] ,'\t', response[nm]['from'] ,'\t', response[nm]['subject'].encode("utf-8"), '\t' , response[nm]['date'] )
         inboxmail_id_list.append(response[nm]['id'])
     
     if showRecent:
@@ -124,6 +124,7 @@ def check_single_email(email_addr,inboxmail_id = 0, bodyasHTML = False, getAttac
     if len(response['attachments']) == 0: 
         str_attached = 'Not Found'
         getAttached = False
+        num_files = 0
     else:
         json_att = response['attachments']
         num_files = len(json_att)
@@ -134,9 +135,9 @@ def check_single_email(email_addr,inboxmail_id = 0, bodyasHTML = False, getAttac
             attached_files.append(json_att[nf]['filename'])
             
     if bodyasHTML:
-        email_body = response['htmlBody']
+        email_body = makeHTMLPage(email_addr, response , str_attached) #response['htmlBody']
         fop = open(saveHTMLFile,'w')
-        fop.write(email_body)
+        fop.write(email_body.encode("utf-8"))
         fop.close()
         email_body = "Saved as HTML in "+saveHTMLFile
     else:
@@ -147,9 +148,12 @@ def check_single_email(email_addr,inboxmail_id = 0, bodyasHTML = False, getAttac
           print("To: ", email_addr)
           print("From: ", response['from'])
           print("Date: ", response['date'])
-          print("Subject: ", response['subject'])
+          print("Subject: ", response['subject'].encode("utf-8"))
           print("Attachments: ", str_attached)
-          print("--------------------\n",email_body )
+          try:
+            print("--------------------\n",email_body )
+          except:  
+            print("--------------------\n",email_body.encode("utf-8") )
           print("--------------------")
 
     if getAttached:
@@ -172,6 +176,18 @@ def getAttachedFile(http_get_url_single, filename,savedir='./'):
     print("Downloaded to: ",savedir+filename)
     return;
     #FUTURE: file size verify downloaded vs server
+
+def makeHTMLPage(email_addr, response , str_attached):
+    if len(response['attachments']) > 0: 
+        ulList = ["<ul>"]
+        for fdsp in str_attached:
+            ulList.append("<li> "+fdsp+" </li>")
+        ulList.append("</ul>")
+    else:
+        ulList = []
+
+    full_htmail = "<html><body><h3> "+response['subject'] +" </h3><hr> Message-id: "+ str(response['id']) +"<br> From: <b> "+response['from']+" </b>  <br> To: "+ email_addr +"  <br> Date & Time: "+response['date']+" <br> <hr> <hr> "+ ''.join(response['htmlBody'])+" <hr>  "+str(len(response['attachments']))+" file(s) attached. "+ ''.join(ulList) +"<hr> </body> </html> "
+    return full_htmail ; 
 
 def use_browser(browser_name='lynx',url='https://www.google.fr/'):
     try:

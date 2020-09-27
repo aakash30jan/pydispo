@@ -4,9 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pydispo", 
-<<<<<<< HEAD
-    version="20.9a2",
+    name="pydispo",
+    version="20.9b1",
     author="Aakash Patil",
     description="A Disposable Mailbox Powered by Pure-Python",
     license="GPL",
@@ -15,7 +14,7 @@ setuptools.setup(
     keywords="privacy disposable-email temporary-email",
     url="https://github.com/aakash30jan/pydispo",
     packages=setuptools.find_packages(),
-    install_requires=['requests'], #PEP-518 issue
+    install_requires=['requests'],
     platforms=['any'],
     classifiers=[
         "Programming Language :: Python ",
