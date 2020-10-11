@@ -9,7 +9,7 @@
 
 `pydispo` is a pure-pythonic way of managing disposable mailbox that allows users to create several disposable email addresses and receive emails on those. It can be directly used from the command line or imported as a python module for advanced usage. `pydispo` is platform-independent and uses python standard libraries, so if you have python installed you don't need to satisfy any additional dependencies. 
 
-Optionally, `pydispo` can fetch attached files and there's also a provision to save emails as HTML.  By default, the emails are shown as text, optionally any standard web browser can be used to view the emails. Currently, it uses 1secmail API to receive emails, and soon it would support some other APIs.  If you want a bash-like implementation with some dependencies, please check the [tmpmail](https://github.com/sdushantha/tmpmail) script. 
+Optionally, `pydispo` can fetch attached files and there's also a provision to save emails as HTML.  By default, the emails are shown as text, optionally any standard web browser can be used to view the emails. Currently, it uses 1secmail API to receive emails, and soon it would support additional APIs.  If you want a bash-like implementation with some dependencies, please check the [tmpmail](https://github.com/sdushantha/tmpmail) script. 
 
 
 ## Installation
