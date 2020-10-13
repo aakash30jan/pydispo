@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pydispo",
-    version="20.9b1",
+    version="20.10b1",
     author="Aakash Patil",
     description="A Disposable Mailbox Powered by Pure-Python",
     license="GPL",

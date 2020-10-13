@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+
 """
 pydispo - Disposable Mailbox Powered by Pure-Python
 By Aakash Patil
 
 url="https://github.com/aakash30jan/pydispo"
-version="20.9a2"
+version="20.10b1"
 license="GNU General Public License, version 3"
 """
 
@@ -29,11 +30,13 @@ else:
 
 #cache location
 if cache_tag == 'TEMP':
+    if not os.path.exists(temp_dir):
+        temp_dir = ".tmp"
     pydispo_workdir = temp_dir+'pydispo'
 elif cache_tag == 'CWD':
     pydispo_workdir = os.getcwd()
 else:
-    #Get from user pydispo_workdir = 
+    #Get from args pydispo_workdir = 
     pydispo_workdir = os.getcwd()
     
 pydispo_emailaddr_cache = pydispo_workdir+"/dispomail.addr"
