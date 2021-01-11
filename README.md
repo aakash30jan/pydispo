@@ -19,8 +19,7 @@ Download the `pydispo` standalone script and make it executable
 $ curl -L "https://git.io/pydispo" > pydispo && chmod +x pydispo
 ```
 
-### PyPI
-Downloads [![Downloads](https://pepy.tech/badge/pydispo)](https://pepy.tech/project/pydispo)
+### PyPI [![Downloads](https://pepy.tech/badge/pydispo)](https://pepy.tech/project/pydispo)
 `pydispo` is also available as a python package from [https://pypi.org/project/pydispo/](https://pypi.org/project/pydispo/).
 Download and install it as a system or environment package with pip. It can be then used in a CLI mode or as a python module 
 ```bash
